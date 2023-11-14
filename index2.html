@@ -49,7 +49,7 @@
         cursor: pointer;
         background-color: rgb(14, 207, 84);
       }
-      #result{
+      #result {
         background-color: antiquewhite;
         height: 60px;
         width: 150px;
@@ -57,8 +57,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
-
       }
     </style>
   </head>
@@ -74,24 +72,25 @@
       <button id="button">BMI</button>
     </div>
     <div id="result">
-        <span id="span">calculating..</span>
+      <span id="span">calculating..</span>
     </div>
 
     <script>
-      //   console.log(height);
       let button = document.querySelector("#button");
       button.addEventListener("click", (e) => {
-        let height = document.querySelector("#height").value;
-        let weight = document.querySelector("#weight").value;
+        let heightInput = document.querySelector("#height");
+        let weightInput = document.querySelector("#weight");
         let span = document.querySelector("#span");
-        console.log(e);
-        console.log(height);
-        console.log(weight);
+
+        let height = heightInput.value;
+        let weight = weightInput.value;
+
         let BMI = Math.floor(weight / (height * height));
-        console.log(BMI);
         span.innerHTML = BMI;
 
-
+        // Clear input values
+        heightInput.value = "";
+        weightInput.value = "";
       });
     </script>
   </body>
