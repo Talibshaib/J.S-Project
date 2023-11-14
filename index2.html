@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <style>
+      body {
+        background-color: rgba(128, 128, 128, 0.997);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      #container {
+        /* display: flex; */
+        /* flex-direction: column; */
+
+        /* margin-left: 25%; */
+        /* margin-top: 50%; */
+
+        background-color: antiquewhite;
+        height: 200px;
+        width: 320px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .label {
+        font-size: large;
+        margin-bottom: 3px;
+        color: grey;
+      }
+      .input {
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+      }
+      #button {
+        margin-top: 10px;
+        padding: 8px 20px;
+        font-size: larger;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: rgb(14, 207, 84);
+      }
+      #result{
+        background-color: antiquewhite;
+        height: 60px;
+        width: 150px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <label for="Height" class="label">Enter Your Height</label>
+      <input type="number" class="input" id="height" />
+
+      <br />
+
+      <label for="weight" class="label">Enter your Weight</label>
+      <input type="number" class="input" id="weight" />
+      <button id="button">BMI</button>
+    </div>
+    <div id="result">
+        <span id="span">calculating..</span>
+    </div>
+
+    <script>
+      //   console.log(height);
+      let button = document.querySelector("#button");
+      button.addEventListener("click", (e) => {
+        let height = document.querySelector("#height").value;
+        let weight = document.querySelector("#weight").value;
+        let span = document.querySelector("#span");
+        console.log(e);
+        console.log(height);
+        console.log(weight);
+        let BMI = Math.floor(weight / (height * height));
+        console.log(BMI);
+        span.innerHTML = BMI;
+
+
+      });
+    </script>
+  </body>
+</html>
