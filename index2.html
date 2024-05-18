@@ -20,7 +20,9 @@
 
         /* margin-left: 25%; */
         /* margin-top: 50%; */
-
+        padding: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         background-color: antiquewhite;
         height: 200px;
         width: 320px;
@@ -36,18 +38,22 @@
         color: grey;
       }
       .input {
-        padding: 5px;
+        padding: 10px;
         border: none;
         border-radius: 5px;
+        width: 200px;
+        outline: none;
       }
       #button {
-        margin-top: 10px;
-        padding: 8px 20px;
+        width: 100px;
+        margin-top: 20px;
+        padding: 10px;
         font-size: larger;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         background-color: rgb(14, 207, 84);
+        color: white;
       }
       #result {
         background-color: antiquewhite;
@@ -62,12 +68,12 @@
   </head>
   <body>
     <div id="container">
-      <label for="Height" class="label">Enter Your Height</label>
+      <label for="Height" class="label">Height (in cm)</label>
       <input type="number" class="input" id="height" />
 
       <br />
 
-      <label for="weight" class="label">Enter your Weight</label>
+      <label for="weight" class="label">Weight (Kgs)</label>
       <input type="number" class="input" id="weight" />
       <button id="button">BMI</button>
     </div>
@@ -82,7 +88,7 @@
         let weightInput = document.querySelector("#weight");
         let span = document.querySelector("#span");
 
-        let height = heightInput.value;
+        let height = heightInput.value / 100;
         let weight = weightInput.value;
 
         let BMI = Math.floor(weight / (height * height));
